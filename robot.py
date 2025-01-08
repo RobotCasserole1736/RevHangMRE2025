@@ -1,7 +1,7 @@
 import wpilib
-from rev import SparkMax
+from wpilib.simulation import stepTiming
 
 class MyRobot(wpilib.TimedRobot):
-    def __init__(self):
-        wpilib._wpilib.TimedRobot.__init__(self)
-        self.ctrl = SparkMax(0, SparkMax.MotorType.kBrushless)
+    def disabledInit(self) -> None:
+        stepTiming(0.2)
+        exit(1736)
