@@ -1,4 +1,5 @@
 import wpilib
+import gc
 
 _instances = {}
 
@@ -20,6 +21,7 @@ class SensorClass(metaclass=Singleton):
 
 class MyRobot(wpilib.TimedRobot):
     def robotInit(self):
+        gc.disable()
         self.testSen = SensorClass()
 
     def robotPeriodic(self):
