@@ -28,5 +28,6 @@ class MyRobot(wpilib.TimedRobot):
         print(self.testSen.testDc.getFrequency())
 
     def endCompetition(self):
+        # Comment this out to break the test
         destroyAllSingletonInstances()
         return super().endCompetition()
